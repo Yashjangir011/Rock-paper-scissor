@@ -2,7 +2,7 @@ import Header from "./components/header"
 import paper2 from "./assets/paper-texture.jpg"
 import GameBoard from "./components/GameBoard"
      
-function App() {
+export default function App() {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
       <div className="fixed inset-0 -z-10">
@@ -14,6 +14,4 @@ function App() {
   )
 }
 
-export default App
 
-np
