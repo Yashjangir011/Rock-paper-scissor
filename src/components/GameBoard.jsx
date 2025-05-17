@@ -97,41 +97,41 @@ export default function GameBoard() {
     }
 
     return (
-        <div className="relative w-full flex-1 flex items-center justify-center">
+        <div className="relative w-full flex-1 flex items-center justify-center p-2 sm:p-4">
             <div className="flex flex-col items-center">
-                <div className="flex gap-20">
+                <div className="flex flex-col sm:flex-row gap-8 sm:gap-20">
                     {/* Player's choice box */}
                     <div className="flex flex-col items-center">
-                        <div className="w-160 h-110 border-2 border-[#8B4513] rounded-lg">
-                            <div className="w-120 h-60 ml-14">
-                                <div>
+                        <div className="w-[280px] sm:w-160 h-[200px] sm:h-110 border-2 border-[#8B4513] rounded-lg">
+                            <div className="w-full sm:w-120 h-40 sm:h-60 px-4 sm:ml-14">
+                                <div className="flex justify-center">
                                     <img 
                                         src={personImage} 
                                         alt="" 
-                                        className={`transition-all duration-300 ${isAnimating ? 'scale-90 opacity-80' : 'scale-100 opacity-100'}`}
+                                        className={`w-32 sm:w-auto transition-all duration-300 ${isAnimating ? 'scale-90 opacity-80' : 'scale-100 opacity-100'}`}
                                     />
                                 </div>
-                                <div className="flex gap-10 justify-center mt-7">
+                                <div className="flex flex-wrap sm:flex-nowrap gap-2 sm:gap-10 justify-center mt-4 sm:mt-7">
                                     <button 
                                         onClick={() => handlePlayerChoice("rock")} 
-                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-4 py-2 text-2xl cursor-pointer font-extrabold"
+                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-2 sm:px-4 py-1 sm:py-2 text-lg sm:text-2xl cursor-pointer font-extrabold disabled:opacity-50"
                                         disabled={isComputerAnimating}
                                     >ROCK</button>
                                     <button 
                                         onClick={() => handlePlayerChoice("paper")} 
-                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-4 py-2 text-2xl cursor-pointer font-extrabold"
+                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-2 sm:px-4 py-1 sm:py-2 text-lg sm:text-2xl cursor-pointer font-extrabold disabled:opacity-50"
                                         disabled={isComputerAnimating}
                                     >PAPER</button>
                                     <button 
                                         onClick={() => handlePlayerChoice("scissor")} 
-                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-4 py-2 text-2xl cursor-pointer font-extrabold"
+                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-2 sm:px-4 py-1 sm:py-2 text-lg sm:text-2xl cursor-pointer font-extrabold disabled:opacity-50"
                                         disabled={isComputerAnimating}
                                     >SCISSOR</button>
                                 </div>
                             </div>
                         </div>
                         {result && (
-                            <div className="mt-6 text-4xl font-bold text-[#8B4513]">
+                            <div className="mt-4 sm:mt-6 text-2xl sm:text-4xl font-bold text-[#8B4513]">
                                 Player
                             </div>
                         )}
@@ -139,26 +139,26 @@ export default function GameBoard() {
 
                     {/* Computer's choice box */}
                     <div className="flex flex-col items-center">
-                        <div className="w-160 h-110 border-2 border-[#8B4513] rounded-lg flex items-center justify-center">
-                            <div className="w-90 h-60 ml-14 mb-28">
-                                <div>
+                        <div className="w-[280px] sm:w-160 h-[200px] sm:h-110 border-2 border-[#8B4513] rounded-lg flex items-center justify-center">
+                            <div className="w-full sm:w-90 h-40 sm:h-60 px-4 sm:ml-14 sm:mb-28">
+                                <div className="flex justify-center">
                                     <img 
                                         src={computerImage}
                                         alt=""
-                                        className={`transition-all duration-300 ${isComputerAnimating ? 'animate-pulse' : ''}`}
+                                        className={`w-32 sm:w-auto transition-all duration-300 ${isComputerAnimating ? 'animate-pulse' : ''}`}
                                     />
                                 </div>
-                                <div className="flex justify-center mt-10">
+                                <div className="flex justify-center mt-4 sm:mt-10">
                                     <button 
                                         onClick={handleComputerChoice} 
-                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-4 py-2 text-2xl cursor-pointer font-extrabold"
+                                        className="text-[#8b4513] border-2 border-[#8B4513] rounded-lg px-4 py-1 sm:py-2 text-lg sm:text-2xl cursor-pointer font-extrabold disabled:opacity-50"
                                         disabled={isComputerAnimating}
                                     >START</button>
                                 </div>
                             </div>
                         </div>
                         {result && (
-                            <div className="mt-6 text-4xl font-bold text-[#8B4513]">
+                            <div className="mt-4 sm:mt-6 text-2xl sm:text-4xl font-bold text-[#8B4513]">
                                 Computer
                             </div>
                         )}
@@ -167,7 +167,7 @@ export default function GameBoard() {
                 
                 {/* Game Result */}
                 {result && (
-                    <div className="mt-8 text-6xl font-extrabold text-[#8B4513] animate-bounce">
+                    <div className="mt-6 sm:mt-8 text-4xl sm:text-6xl font-extrabold text-[#8B4513] animate-bounce text-center">
                         {result}
                     </div>
                 )}

@@ -4,7 +4,7 @@ import GameBoard from "./components/GameBoard"
      
 function App() {
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen flex flex-col overflow-x-hidden">
       <div className="fixed inset-0 -z-10">
         <img src={paper2} alt="" className="w-full h-full object-cover" />
       </div>
@@ -16,3 +16,4 @@ function App() {
 
 export default App
 
+np
